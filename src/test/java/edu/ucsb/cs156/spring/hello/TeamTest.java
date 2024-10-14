@@ -27,12 +27,21 @@ public class TeamTest {
     @Test
     public void equals_correct() {
         Team x = new Team("test-team");
+        Team x1 = new Team("test-team");
+        Team x2 = new Team("test-team");
+        x1.addMember("d");
+        x2.addMember("d");
         Team y = new Team("2");
+        Team y1 = new Team("3");
+        y.addMember("c");
+        y1.addMember("c");
         int num=10;
         assert(team.equals(team));
         assert(team.equals(x));
         assert(!team.equals(y));
         assert(!team.equals(num));
+        assert(!y.equals(y1));
+        assert(x1.equals(x2));
 
     }
     @Test
